@@ -1,25 +1,25 @@
+#include <SparkFun_u-blox_SARA-R5_Arduino_Library.h>
+SARA_R5 mySARA;
 
 void setup() {
-  GetAngleSetup();
-  GPSsetup();
+  //setup_get_angle();
+  //setup_GPS();
+  setup_network_operator();
+  setup_SMS();
 }
 
 void loop() {
-  bool sendmessage = false;
-  while(!sendmessage) {
+  /*do {
     GPS();
-    if (GetAngle()) {
-      //send text message
-      sendmessage = true;
-    }
-  }
+  } while (!get_angle());
   SMS();
-  delay(1000);
+  print_info();
+  delay(1000);*/
 }
 
-void SMS() {
+void print_info() {
   Serial.println("=========================================");
-  printData();
-  printGPS();
+  print_data();
+  print_GPS();
   Serial.println("=========================================");
 }

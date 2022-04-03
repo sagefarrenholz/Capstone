@@ -10,7 +10,7 @@
 MPU6050 mpu(Wire);
 unsigned long timer = 0;
 
-void GetAngleSetup() {
+void setup_get_angle() {
   Serial.begin(9600);
   Wire.begin();
   
@@ -26,7 +26,7 @@ void GetAngleSetup() {
   Serial.println("Done!\n");
 }
 
-int GetAngle() {
+int get_angle() {
   mpu.update();
   bool flag = false;
   if (abs(mpu.getAngleX()) >= 90 || abs(mpu.getAngleX()) >= 90) {
@@ -39,7 +39,7 @@ int GetAngle() {
   return flag;
 }
 
-void printData() {
+void print_data() {
   Serial.print("\nOrientation (°): ");
   Serial.print("X: ");
   Serial.print(mpu.getAngleX());

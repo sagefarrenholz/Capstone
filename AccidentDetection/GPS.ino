@@ -11,7 +11,7 @@
 // Usually we would tell the library which GPIO pin to use to control the SARA power (see below),
 // but we can start the SARA without a power pin. It just means we need to manually 
 // turn the power on if required! ;-D
-SARA_R5 mySARA;
+//SARA_R5 mySARA;
 
 // Create a SARA_R5 object to use throughout the sketch
 // We need to tell the library what GPIO pin is connected to the SARA power pin.
@@ -28,7 +28,7 @@ boolean valid;
 #define GPS_POLL_RATE 5000 // Read GPS every 5 seconds
 unsigned long lastGpsPoll = 0;
 
-void GPSsetup()
+void setup_GPS()
 {
   Serial.begin(9600); // Start the serial console
 
@@ -98,7 +98,7 @@ void GPS()
   }
 }
 
-void printGPS(void)
+void print_GPS(void)
 {
   Serial.println();
   Serial.println("UTC: " + String(gps.utc));
